@@ -60,7 +60,7 @@ function cordenadasM() {
         [10, 20],
         [30, 40]
     ];
-    let final=matriz[0][0] + matriz[1][1]
+    let final = matriz[0][0] + matriz[1][1]
     alert(`El resultado es ${final}`)
 }
 
@@ -73,6 +73,74 @@ Muestra la matriz completa en un alert().
 
 function terceraM() {
     let datos = [1, [2, [3, 4]]];
-    let resultado=datos[1][1][1];
-    alert(resultado.join(" "))
+    let resultado = datos[1][1][1];
+    datos[1][1].push(5);
+    alert(datos);
+}
+
+/* Ejercicio 6: Traductor de Acciones (Matriz + Arreglo)
+Instrucciones: Define let sujetos = ["El programador", "La computadora"]; y una matriz let verbos = [["codifica", "analiza"], ["falla", "reinicia"]];.
+Crea una función que tome a "El programador" y la acción "analiza".
+Concatena la frase y lánzala por alert().
+ */
+
+function traductorAcciones() {
+    let sujetos = ["El programador", "La computadora"];
+    let verbos = [["codifica", "analiza"], ["falla", "reinicia"]];
+    let palabra = `${sujetos[0]} ${verbos[0][1]}`
+    alert(palabra);
+}
+
+/*  Ejercicio 7: Limpieza de Datos (Pop y Unshift)
+Instrucciones: Tienes el arreglo let inventario = ["Error", "Laptop", "Mouse", "Teclado", "Virus"];.
+Elimina el primer elemento ("Error") y el último ("Virus").
+Agrega "Monitor" al inicio.
+Muestra el inventario final con alert().
+ */
+
+function limpiezaDatos() {
+    let inventario = ["Error", "Laptop", "Mouse", "Teclado", "Virus"];
+    let eliminar = inventario.shift();
+    let eliminada = inventario.pop();
+    inventario.unshift("Monitor")
+    alert(inventario.join(" "))
+    alert(`Las palabras eliminadas son ${eliminar} y ${eliminada}`)
+}
+
+/* Ejercicio 8: La Matriz de Identidad Modificada
+Instrucciones: Define una matriz de 3x3 llena de ceros.
+JavaScript
+let tablero = [
+  [0, 0, 0],
+  [0, 0, 0],
+  [0, 0, 0]
+];
+
+Cambia todos los ceros de la diagonal principal (superior izquierda a inferior derecha) por el número 1.
+Muestra el resultado de la fila central por alert().
+[0], [1][1], and [2][2]]
+ */
+
+function matrizModificada() {
+    let tablero = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+    ];
+    tablero[0][0] = 1
+    tablero[1][1] = 1
+    tablero[2][2] = 1
+    alert(tablero)
+}
+
+/* Ejercicio 9: El Consultorio Médico (Complejo)
+Instrucciones: Crea una función con un arreglo let pacientes = ["Ana", "Betto"];.
+Llegan dos pacientes más: "Carlos" y "Diana" (usa .push()).
+Atienden al primero (usa .shift()).
+Llega una urgencia: "Sonia" debe ser atendida de inmediato (usa .unshift()).
+Muestra cuántos pacientes quedan y quién es el siguiente en la lista.
+ */
+
+function consultorioM() {
+    let pacientes = ["Ana", "Betto"];
 }
