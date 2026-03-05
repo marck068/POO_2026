@@ -143,4 +143,30 @@ Muestra cuántos pacientes quedan y quién es el siguiente en la lista.
 
 function consultorioM() {
     let pacientes = ["Ana", "Betto"];
+    pacientes.push("Carlos", "Diana");
+    pacientes.shift();
+    pacientes.unshift("Sonia");
+    alert(`Pacientes en espera: ${pacientes.length}. Siguiente paciente: ${pacientes[0]}`);
+}
+
+/*  Ejercicio 10: Extracción de Profundidad (Matriz 3x3x3)
+Instrucciones: Dada la siguiente estructura:
+JavaScript
+let caja = [
+  ["frutas", "verduras"],
+  [["manzana", "pera"], ["tomate", "lechuga"]]
+];
+Accede a "pera" y a "lechuga".
+Crea una frase que diga: "En la canasta hay pera y lechuga".
+Muestra con alert().
+ */
+
+function extraccionProfundidad() {
+    let caja = [
+        ["frutas", "verduras"],
+        [["manzana", "pera"], ["tomate", "lechuga"]]
+    ];
+    let fruta = caja[1][0][1];      
+    let verdura = caja[1][1][1];    
+    alert(`En la canasta hay ${fruta} y ${verdura}`);
 }
