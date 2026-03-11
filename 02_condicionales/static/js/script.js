@@ -111,11 +111,11 @@ Si es menor a 4: "Reprobado".
 
 function calificacionesChile() {
     let nota = parseFloat(prompt("Ingrese la nota: "));
-    if (6 >= 7) {
+    if (nota >= 6 && nota <= 7) {
         alert("Excelente, eximido")
-    } else if (4.1 >= 5.9) {
+    } else if (nota >= 4 && nota <=5.9) {
         alert("Aprobado, vas a examen")
-    } else if (4 < 1) {
+    } else if (nota < 4 && nota >= 1) {
         alert("Reprobado")
     } else {
         alert("Ingrese un valor valido")
