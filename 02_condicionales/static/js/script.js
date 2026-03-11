@@ -156,10 +156,18 @@ Si no, muestra: "No tenemos ese producto en esa sección".
 */
 
 function almacenMatrices() {
-    let estanteria = [ ["Manzanas", "Peras"], ["Leche", "Yogur"] ];
-    let seccion
-    let producto
-}
+    let estanteria = [["Manzanas", "Peras"], ["Leche", "Yogur"]];
+    let seccion = prompt("Ingresar una seccion(0-1)");
+    let productos = prompt("Ingresar producto solicitado");
+    if (seccion !== 0 || seccion !== 1) {
+        alert("No tenemos esta seccion")
+    }
+    else if (estanteria[seccion].includes(productos)) {
+        alert("Producto encontrado en el estante")
+    } else {
+        alert("No tenemos ese producto en esa sección")
+    }
+};
 
 
 /* 10. Registro Maestro de Visitas
@@ -170,7 +178,26 @@ Si el nombre existe y esVip es true: Agregarlo al inicio con .unshift().
 Si el nombre existe y esVip es false: Agregarlo al final con .push().
 Al final, muestra cuántas personas hay en total usando .length.
 */
+let bitacora = [];
 
 function registroVisitas() {
+    let nombreVisita = prompt("Ingresa tu nombre: ")
+    let esVip = parseInt(prompt(`¿Eres VIP?\n0 = no\n1 = si`));
+    nombreVisita = nombreVisita.trim();
 
-}
+    if (nombreVisita == "") {
+        alert("Error: el nombre no puede estar vacío.");
+    } else if (bitacora.includes(nombreVisita)) {
+        alert("Esa persona ya está en la lista.");
+    } else if (esVip == 1) {
+        bitacora.unshift(nombreVisita);
+        alert(`Agregado correctamente a la lista:\n${bitacora.join(", ")}\nPersonas en total:
+         ${bitacora.length}`);
+    } else if (esVip == 0) {
+        bitacora.push(nombreVisita);
+        alert(`Agregado correctamente a la lista:\n${bitacora.join(", ")}\nPersonas en total:
+         ${bitacora.length}`);
+    } else {
+        alert("Ingrese valores validos.");
+    }
+};
