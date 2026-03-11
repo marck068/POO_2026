@@ -64,7 +64,7 @@ function stockMaximo() {
         alert("Bodega llena, eliminando último ingreso")
         bodega.pop();
     }
-}
+};
 
 
 /* 5. Limpieza de Datos
@@ -80,4 +80,38 @@ function limpiezaDatos() {
         colaEspera.shift()
     }
     alert(`Cola de espera limpia: ${colaEspera.join(" - ")}`)
+};
+
+/* 6. Acceso VIP
+Tienes una lista de usuarios comunes: let foro = ["User1", "User2"];
+Declara la variable rol.
+Si el rol es "Admin", agrega el nombre al inicio de la lista con .unshift() para que tenga prioridad.
+Si no es Admin, agrégalo al final con .push().
+*/
+
+function AccesoVIP() {
+    let foro = ["User1", "User2"];
+    let rol = prompt("Ingresa rol:");
+    if(rol.toLowerCase() === "admin") {
+        foro.unshift(rol);
+        alert(foro);
+    } else {
+        foro.push(rol);
+        alert(foro);
+    }
+};
+
+/* 7. Sistema de Calificaciones Chile (Escala 1 a 7)
+Crea una variable nota.
+Si la nota es 6 o superior: "Excelente, eximido".
+Si la nota es entre 4 y 5.9: "Aprobado, vas a examen".
+Si es menor a 4: "Reprobado".
+(Pista: Usa else if).
+*/
+
+function calificacionesChile() {
+    let nota = parseFloat(prompt("Ingrese la nota: "));
+    if (6 >= 7) {
+        alert("Excelent, eximido")
+    }
 }
