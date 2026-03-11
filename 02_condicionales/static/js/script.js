@@ -12,6 +12,7 @@ function porteroDigital() {
     };
 };
 
+
 /* 2. Validador de Nombres
 Declara una variable nombre.
 Si el nombre no está vacío, crea un arreglo llamado usuarios y agrega el nombre usando .push().
@@ -28,6 +29,7 @@ function validarNombre() {
         alert("Error: El nombre no puede estar en blanco");
     }
 };
+
 
 /* 3. El Filtro de Duplicados
 Tienes esta lista: let productos = ["celular", "teclado", "mouse"];
@@ -47,6 +49,7 @@ function filtroDuplicado() {
         alert("El producto no está en el inventario");
     }
 };
+
 
 /* 4. Control de Stock Máximo
 Imagina que una bodega solo tiene espacio para 5 cajas.
@@ -76,11 +79,12 @@ Si no, muestra: "La lista de espera está correcta".
 
 function limpiezaDatos() {
     let colaEspera = ["error_404", "Juan", "Sofía"];
-    if (colaEspera[0] == "error_404"){
+    if (colaEspera[0] == "error_404") {
         colaEspera.shift()
     }
     alert(`Cola de espera limpia: ${colaEspera.join(" - ")}`)
 };
+
 
 /* 6. Acceso VIP
 Tienes una lista de usuarios comunes: let foro = ["User1", "User2"];
@@ -92,7 +96,7 @@ Si no es Admin, agrégalo al final con .push().
 function AccesoVIP() {
     let foro = ["User1", "User2"];
     let rol = prompt("Ingresa rol:");
-    if(rol.toLowerCase() === "admin") {
+    if (rol.toLowerCase() === "admin") {
         foro.unshift(rol);
         alert(foro);
     } else {
@@ -100,6 +104,7 @@ function AccesoVIP() {
         alert(foro);
     }
 };
+
 
 /* 7. Sistema de Calificaciones Chile (Escala 1 a 7)
 Crea una variable nota.
@@ -113,11 +118,59 @@ function calificacionesChile() {
     let nota = parseFloat(prompt("Ingrese la nota: "));
     if (nota >= 6 && nota <= 7) {
         alert("Excelente, eximido")
-    } else if (nota >= 4 && nota <=5.9) {
+    } else if (nota >= 4 && nota <= 5.9) {
         alert("Aprobado, vas a examen")
     } else if (nota < 4 && nota >= 1) {
         alert("Reprobado")
     } else {
         alert("Ingrese un valor valido")
     }
+}
+
+
+/* 8. Buscador de Invitados
+let invitados = ["Ana", "Luis", "Camila", "Diego"];
+Crea una variable persona.
+Si la persona está en la lista, muestra: "¡Bienvenido/a [nombre]! Pasa a la fiesta".
+Si no está, muestra: "Lo siento, no estás en la lista de invitados".
+*/
+
+function buscadorInvitados() {
+    let invitados = ["Ana", "Luis", "Camila", "Diego"];
+    let personas = prompt("Ingrese su nombre: ");
+    if (invitados.includes(personas)) {
+        alert(`¡Bienvenido/a ${personas}! pasa a la fiesta`);
+    } else {
+        alert("Lo siento, no estas en la lista de invitados");
+    }
+}
+
+
+/* 9. El Almacén de Matrices (2D Arrays)
+Imagina una estantería con dos niveles (una matriz):
+let estanteria = [ ["Manzanas", "Peras"], ["Leche", "Yogur"] ];
+Crea una variable seccion (0 o 1) y una variable producto.
+Accede a la sección elegida. Si el producto solicitado está en esa sub-lista,
+muestra: "Producto encontrado en el estante".
+Si no, muestra: "No tenemos ese producto en esa sección".
+*/
+
+function almacenMatrices() {
+    let estanteria = [ ["Manzanas", "Peras"], ["Leche", "Yogur"] ];
+    let seccion
+    let producto
+}
+
+
+/* 10. Registro Maestro de Visitas
+Crea un arreglo vacío llamado bitacora.
+Declara las variables nombreVisita y esVip (booleano).
+Si el nombre está vacío: Mostrar error.
+Si el nombre existe y esVip es true: Agregarlo al inicio con .unshift().
+Si el nombre existe y esVip es false: Agregarlo al final con .push().
+Al final, muestra cuántas personas hay en total usando .length.
+*/
+
+function registroVisitas() {
+
 }
