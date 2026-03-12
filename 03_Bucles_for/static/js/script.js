@@ -25,10 +25,14 @@ Usa un ciclo for para recorrer el arreglo. En cada iteración, agrega el nombre 
  separándolos por una coma y un espacio.
  */
 function listaAutomatica() {
+    let curso = ["Ana", "Diego", "Sofía", "Matias"];
     const container = document.getElementById('resultadoContainer2');
     const resultado = document.getElementById('result2');
-    container.classList.remove('d-none')
-};
+    for (let i = 0; i < curso.length; i++) {
+        resultado.textContent += `${curso[i]}, `
+    }
+    container.classList.remove('d-none');
+}
 
 
 /* 3. Buscador de Aprobados (Escala 1 a 7)
