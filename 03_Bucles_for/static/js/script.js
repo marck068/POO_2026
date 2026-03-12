@@ -47,8 +47,8 @@ function buscadorAprobados() {
     let contadorAprobados = 0;
     const container = document.getElementById('resultadoContainer3');
     const resultado = document.getElementById('result3');
-    for (let i = 0; i < notas.length; i++){
-        if (notas[i] >= 4.0){
+    for (let i = 0; i < notas.length; i++) {
+        if (notas[i] >= 4.0) {
             contadorAprobados++
         }
     }
@@ -65,8 +65,17 @@ Si el producto es diferente de "Agotado" (!==), agrégalo al texto del párrafo 
 Si dice "Agotado",sáltalo.
  */
 function filtroInventario() {
+    let productos = ["Teclado", "Mouse", "Agotado", "Monitor", "Agotado", "Audífonos"];
     const container = document.getElementById('resultadoContainer4');
     const resultado = document.getElementById('result4');
+    let disponibles = [];
+    resultado.textContent = "";
+    for (let i = 0; i < productos.length; i++) {
+        if (productos[i] !== "Agotado") {
+            disponibles.push(productos[i]);
+        }
+    }
+    resultado.textContent = `productos disponibles: ${disponibles.join(" - ")}`
     container.classList.remove('d-none')
 };
 
@@ -79,8 +88,14 @@ Usa un ciclo for para sumar cada uno de los aportes a la variable total.
 Al finalizar el ciclo, escribe en el párrafo: "La colecta reunió un total de: $[total]".
  */
 function sumandoColecta() {
+    let aportes = [1500, 2000, 500, 3000, 1000];
+    let totalRecaudado = 0;
     const container = document.getElementById('resultadoContainer5');
     const resultado = document.getElementById('result5');
+    for (let i = 0; i < aportes.length; i++) {
+        totalRecaudado += aportes[i];
+    }
+    resultado.textContent = `La colecta reunió un total de: ${totalRecaudado}`
     container.classList.remove('d-none')
 };
 
@@ -92,8 +107,18 @@ Recorre el arreglo. Si el índice actual (i) es par (puedes usar i % 2 === 0),
  agrega la palabra " [VIP]" al lado de su nombre y muéstralo en el párrafo. Si es impar, muéstralo normal.
  */
 function formateadorNombresVip() {
+    let asistentes = ["carlos", "MARIA", "pedro", "LUCIA"];
+    let resultado = [];
     const container = document.getElementById('resultadoContainer6');
-    const resultado = document.getElementById('result6');
+    const result = document.getElementById('result6');
+    for (let i = 0; i < asistentes.length; i++) {
+        if (i % 2 === 0) {
+            resultado.push(`${asistentes[i]} VIP`);
+        } else {
+            resultado.push(`${asistentes[i]} `);
+        }
+    }
+    result6.textContent = resultado.join(" - ");
     container.classList.remove('d-none')
 };
 
@@ -106,8 +131,17 @@ Recorre la bodega con un for. Cada vez que el elemento de la lista sea igual al 
 Al final, inyecta en el párrafo: "El artículo [articuloBuscado] se encuentra [veces] veces en la bodega".
  */
 function buscadorStock() {
+    let bodega = ["Lápiz", "Cuaderno", "Goma", "Cuaderno", "Regla", "Cuaderno"];
+    let articuloBuscado = prompt("Ingrese el articulo que busca: ");
+    let vecesEncontrado = 0;
     const container = document.getElementById('resultadoContainer7');
     const resultado = document.getElementById('result7');
+    for (let i = 0; i < bodega.length; i++) {
+        if (articuloBuscado == bodega[i]) {
+            vecesEncontrado++
+        }
+    }
+    resultado.textContent = `El artículo ${articuloBuscado} se encuentra ${vecesEncontrado} veces en la bodega`
     container.classList.remove('d-none')
 };
 
