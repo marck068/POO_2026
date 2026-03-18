@@ -1,20 +1,43 @@
 console.log("JS conectado")
 
-
-/* 1. La Anatomía de una Función
-Una función es un bloque de código empaquetado y guardado con un nombre, que solo se ejecuta cuando tú se lo ordenas.
-¿Cómo se escribe?
-JavaScript
-// 1. Declaración: Creamos al trabajador y le enseñamos qué hacer.
-function saludar() {
-    console.log("¡Hola! Bienvenido al sistema.");
-}
-// 2. Ejecución (Llamada): Le ordenamos al trabajador que trabaje.
-saludar(); // Esto imprimirá el mensaje en la consola.
-saludar(); // ¡Podemos llamarlo todas las veces que queramos!
+/* 1: Lista de Asistencia (push)
+Contexto: Eres el profesor y estás pasando la lista. Cada alumno que dice "presente"
+ debe ser anotado al final del registro.
+Crea un arreglo vacío: let asistencia = [];
+Función Principal: Crea registrarAlumno(). (Esta va en el onclick del botón).
+Captura el nombre escrito en el input.
+Usa .push() para meter a ese alumno al final del arreglo asistencia.
+Modifica el textContent del párrafo para mostrar: "Alumnos presentes: " seguido del arreglo.
+Limpia el input vaciando su .value.
  */
+// input = parseInt(input); --> Transformar
 
+let asistencia = [];
+function agregarLista(nombre) {
+    asistencia.push(nombre);
+    return asistencia.join(", ");
+}
 function listarAsistencia() {
-    const input = document.getElementById("input1").value;
-    // input = parseInt(input); --> Transformar 
-};
+    const container = document.getElementById("container1");
+    const result = document.getElementById("result1");
+    const input = document.getElementById("input1");
+    let nombre = input.value;
+    let resultado = agregarLista(nombre);
+    result.textContent = resultado;
+
+    input.value = "";
+    container.classList.remove("d-none");
+}
+
+
+/* 2: Fila de Urgencias Médicas (unshift e if)
+Contexto: En un hospital, los pacientes graves no van al final de la fila,
+ pasan directamente al primer lugar de atención.
+Crea un arreglo: let pacientes = ["Carlos", "María", "Diego"];
+Función Principal: Crea ingresarUrgencia().
+Captura el nombre del paciente desde el input.
+Usa un if para revisar si el input NO está vacío (!== "").
+Si escribieron un nombre, usa .unshift() para agregarlo al inicio del arreglo pacientes.
+Muestra en el textContent del párrafo: "Próximos a atender: " seguido del arreglo.
+Limpia el input.
+ */
