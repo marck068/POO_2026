@@ -16,7 +16,7 @@ let asistencia = [];
 function agregarLista(nombre) {
     asistencia.push(nombre);
     return asistencia.join(", ");
-}
+};
 function listarAsistencia() {
     const container = document.getElementById("container1");
     const result = document.getElementById("result1");
@@ -27,7 +27,7 @@ function listarAsistencia() {
 
     input.value = "";
     container.classList.remove("d-none");
-}
+};
 
 
 /* 2: Fila de Urgencias Médicas (unshift e if)
@@ -41,3 +41,23 @@ Si escribieron un nombre, usa .unshift() para agregarlo al inicio del arreglo pa
 Muestra en el textContent del párrafo: "Próximos a atender: " seguido del arreglo.
 Limpia el input.
  */
+
+let pacientes = ["Carlos", "María", "Diego"];
+function agregarUrgencia(nombre) {
+    pacientes.unshift(nombre);
+    return pacientes.join(", ");
+};
+function filaUrgencias() {
+    const container = document.getElementById("container2");
+    const result = document.getElementById("result2");
+    const input = document.getElementById("input2");
+    if (input.value !== "") {
+        let nombre = input.value;
+        let resultado = agregarUrgencia(nombre);
+        result.textContent = resultado;
+        input.value = "";
+        container.classList.remove("d-none");
+    } else {
+        alert("El nombre no puede estar vacío.");
+    };
+};
