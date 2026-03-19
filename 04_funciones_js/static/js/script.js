@@ -110,14 +110,26 @@ Limpia el input.
 */
 
 let codigosValidos = ["VERANO2026", "PROMO50", "CLIENTEVIP"];
+function buscarCodigo(codigo) {
+    let mensaje = "Código inválido o expirado"
+    for (let i = 0; i < codigosValidos.length; i++) {
+        if (codigo === codigosValidos[i]) {
+            mensaje = "¡Éxito! Código aceptado";
+            return "¡Éxito! Código aceptado";
+        } else {
+            mensaje = "Ingresa un Código válido";
+        }
+    }
+}
+
 
 function codigosDescuento() {
     const container = document.getElementById("container4");
     const result = document.getElementById("result4");
     const input = document.getElementById("input4");
-
-    let accion = input.value.trim();
-
-    let mensaje = "Valido";
-    
+    let codigo = input.value
+    let resultado = buscarCodigo(codigo);
+    result.textContent = resultado;
+    input.value = "";
+    container.classList.remove("d-none");
 }
