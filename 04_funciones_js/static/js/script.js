@@ -62,7 +62,7 @@ function filaUrgencias() {
     };
 };
 
-/* Ejercicio 3: Sistema de Delivery (shift, pop e if)
+/* 3: Sistema de Delivery (shift, pop e if)
 Contexto: Un restaurante tiene pedidos listos. El cajero puede despachar el pedido más antiguo,
 o cancelar el último pedido que entró por un error.
 Crea un arreglo: let entregas = ["Pizza", "Sushi", "Hamburguesa", "Ensalada"];
@@ -84,8 +84,7 @@ function actualizarPedidos(pedido) {
         alert("Ingrese un valor válido")
     }
     return entregas.join(", ")
-}
-
+};
 function sistemaDelivery() {
     const container = document.getElementById("container3");
     const result = document.getElementById("result3");
@@ -96,7 +95,7 @@ function sistemaDelivery() {
     container.classList.remove("d-none");
 };
 
-/* Ejercicio 4: Validador de Códigos de Descuento (for e if)
+/* 4: Validador de Códigos de Descuento (for e if)
 Contexto: Una tienda online revisa si el código promocional que ingresó el cliente
 existe en su base de datos para aplicarle una rebaja.
 Crea un arreglo: let codigosValidos = ["VERANO2026", "PROMO50", "CLIENTEVIP"];
@@ -120,9 +119,7 @@ function buscarCodigo(codigo) {
             mensaje = "Ingresa un Código válido";
         }
     }
-}
-
-
+};
 function codigosDescuento() {
     const container = document.getElementById("container4");
     const result = document.getElementById("result4");
@@ -132,4 +129,26 @@ function codigosDescuento() {
     result.textContent = resultado;
     input.value = "";
     container.classList.remove("d-none");
-}
+};
+
+/* 5: Simulador de Cuotas (for)
+Contexto: Un cliente compra un producto y el sistema le genera automáticamente 
+las etiquetas para sus próximas 3 letras de pago.
+Función Principal: Crea simularCuotas().
+Captura el nombre del producto desde el input (ej: "Bicicleta").
+Crea una variable vacía: registroPagos = "";
+Crea un ciclo for que dé exactamente 3 vueltas (del 1 al 3).
+En cada vuelta, súmale (+=) a registroPagos el producto y el número de la cuota 
+(Ej: producto + " - Cuota " + i + " | ").
+Fuera del ciclo, muestra la variable registroPagos en el textContent del párrafo.
+Limpia el input.
+*/
+
+function simuladorCuotas() {
+    const container = document.getElementById("container5");
+    const result = document.getElementById("result5");
+    const input = document.getElementById("input5");
+    result.textContent = resultado;
+    input.value = "";
+    container.classList.remove("d-none");
+};
