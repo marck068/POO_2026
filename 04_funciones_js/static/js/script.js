@@ -144,11 +144,66 @@ Fuera del ciclo, muestra la variable registroPagos en el textContent del párraf
 Limpia el input.
 */
 
+function calculadoraCuotas(valor, cuota) {
+    let registroPagos = "";
+    for (let i = 1; i <= 3; i++) {
+        registroPagos += `Cuota ${i} de ${cuota}: ${parseInt(valor / 3)} |`;
+    }
+    return registroPagos;
+};
+
 function simuladorCuotas() {
+    const producto = document.getElementById("input5_1");
+    let valorProducto = parseInt(producto.value);
+    const cuotaInput = document.getElementById("input5_2");
+    let cuota = parseInt(cuotaInput.value);
     const container = document.getElementById("container5");
     const result = document.getElementById("result5");
-    const input = document.getElementById("input5");
+    let resultado = calculadoraCuotas(valorProducto, cuota)
     result.textContent = resultado;
-    input.value = "";
+    producto.value = "";
+    cuotaInput.value = "";
     container.classList.remove("d-none");
+};
+
+/* Ejercicio 6: Filtro de Presupuesto (for e if)
+Contexto: Una vitrina virtual tiene varios precios. El cliente ingresa cuánta plata tiene en el bolsillo, y el sistema le muestra solo los precios que le alcanza para pagar.
+Crea un arreglo de precios: let vitrina = [2500, 15000, 8000, 30000, 5000];
+Función Principal: Crea filtrarPrecios().
+Captura el número desde el input (este será el presupuesto del cliente. Recuerda usar Number()).
+Crea una variable opciones = "Te alcanza para los precios: ";
+Recorre el arreglo vitrina con un for.
+Dentro del ciclo, usa un if. Si el precio actual del arreglo es menor o igual (<=) a la plata que ingresó el cliente, súmalo a la variable opciones más un guion (-).
+Muestra el resultado en el textContent del párrafo.
+Limpia el input.
+ */
+
+let vitrina = [2500, 15000, 8000, 30000, 5000];
+let opciones = [];
+function comprobarPresupuesto(presupueto) {
+    for (let i = 0; i <= vitrina.length; i++) {
+        if (presupuesto >= vitrina[i]) {
+            opciones.push(vitrina[i]);
+        };
+    };
+    if (opciones == "") {
+        return "No te alcanza para nada.";
+    } else {
+        return `Te alcanza para los precios: ${opciones.join(" - ")}`
+    }
+};
+function filtroPresupuesto() {
+    let input = document.getElementById("input6");
+    const container = document.getElementById("container6");
+    const result = document.getElementById("result6");
+    let dinero = parseInt(input.value);
+    if (isNaN(dinero)) {
+        alert("Ingresa valores válidos.");
+    } else {
+        let resultado = comprobarPresupuesto(dinero);
+        result.textContent = resultado;
+        input.value = "";
+        container.classList.remove("d-none")
+        opciones = [];
+    }
 };
